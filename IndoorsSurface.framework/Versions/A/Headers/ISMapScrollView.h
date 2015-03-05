@@ -26,12 +26,14 @@
 - (void)cancelSelectLocation;
 
 - (void)setRoutingPath:(NSArray *)path;
+- (void)setRoutingPath:(NSArray *)path withColor:(UIColor *)color lineWidth:(CGFloat)lineWidth;
 - (void)clearRouting;
 
 - (void)setUserPosition:(IDSCoordinate *)coordinate;
 - (void)setUserOrientation:(float)orientation;
 - (void)setUserLocationHidden:(BOOL)isHidden;
 - (void)setMapCenterWithCoordinate:(IDSCoordinate *)coordinate;
+- (void)zoomToMapRect:(CGRect)rect animated:(BOOL)animated;
 
 - (void)addOverlay:(ISMapOverlay *)overlay toFloorLevel:(NSInteger)floorLevel;
 - (void)removeOverlay:(ISMapOverlay *)overlay;
@@ -40,6 +42,8 @@
 - (void)setZoneDisplayMode:(IndoorsSurfaceZoneDisplayModes)zoneDisplayMode;
 - (void)setUserPositionDisplayMode:(IndoorsSurfaceUserPositionDisplayModes)userPositionDisplayMode;
 - (void)setUserPositionIcon:(UIImage *)userPositionIcon;
+- (void)setUserPositionDefaultIconColor:(UIColor *)color;
+- (void)setUserPositionAccuracyCircleColor:(UIColor *)color;
 - (void)didReceiveWeakSignal;
 
 - (IDSCoordinate *)coordinateForPoint:(CGPoint)point;

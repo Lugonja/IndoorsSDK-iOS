@@ -51,6 +51,8 @@
  */
 - (void)validateLicenseKeyWithDelegate:(id<IDSServiceAuthenticationDelegate>)delegate;
 
+- (void)setCredentialsWithPassword:(NSString *)password andEmail:(NSString *)email;
+
 /*!
  @discussion
  Register location listener to recieve any location updates.
@@ -72,12 +74,11 @@
 - (void)setParameter:(IndoorsParameterValue)value forKey:(IndoorsParameterKey)key;
 - (void)setParameterObject:(id)value forKey:(IndoorsParameterKey)key;
 
-- (void)initializeLocalizationSuccess:(void (^)())success;
+- (void)initializeLocalizationWithBuilding:(IDSBuilding*)building success:(void (^)())success;
 - (void)stopLocalization;
 - (void)startLocalization;
 
 - (void)getBuilding:(IDSBuilding *)building forRequestDelegate:(id<LoadingBuildingDelegate>)delegate;
-- (void)cancelGetBuilding;
 
 - (void)getOnlineBuildings:(id<OnlineBuildingDelegate>)onlineBuildingDelegate;
 
