@@ -7,28 +7,105 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86DA536DC7496AE93A732A2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98EC9928615D07A2B3DCA81D /* libPods.a */; };
+		B40E2EE61A70FF6800A9474C /* IDLocationListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E2EE51A70FF6800A9474C /* IDLocationListener.m */; };
 		B41095181A1366FC002D7F6B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41095171A1366FC002D7F6B /* Launch Screen.xib */; };
+		B41297521883F3BD00C8C00D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41297511883F3BD00C8C00D /* CoreMotion.framework */; };
+		B43CB43E1A6E8153004AB368 /* IDSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43CB43D1A6E8153004AB368 /* IDSecondViewController.m */; };
+		B4CB94A11A669882004CB377 /* libIndoors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB949A1A66984D004CB377 /* libIndoors.a */; };
+		B4CB94A21A669882004CB377 /* libIndoorsSurface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB94911A66983D004CB377 /* libIndoorsSurface.a */; };
+		B4CB94A41A669882004CB377 /* libLocator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB94A31A669882004CB377 /* libLocator.a */; };
+		CEB6F40517B9F09F00C2880D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F40417B9F09F00C2880D /* UIKit.framework */; };
+		CEB6F40717B9F09F00C2880D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F40617B9F09F00C2880D /* Foundation.framework */; };
+		CEB6F40917B9F09F00C2880D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F40817B9F09F00C2880D /* CoreGraphics.framework */; };
 		CEB6F40F17B9F09F00C2880D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEB6F40D17B9F09F00C2880D /* InfoPlist.strings */; };
 		CEB6F41117B9F09F00C2880D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB6F41017B9F09F00C2880D /* main.m */; };
 		CEB6F41517B9F09F00C2880D /* IDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB6F41417B9F09F00C2880D /* IDAppDelegate.m */; };
+		CEB6F41717B9F09F00C2880D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB6F41617B9F09F00C2880D /* Default.png */; };
+		CEB6F41917B9F09F00C2880D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB6F41817B9F09F00C2880D /* Default@2x.png */; };
+		CEB6F41B17B9F09F00C2880D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB6F41A17B9F09F00C2880D /* Default-568h@2x.png */; };
 		CEB6F41E17B9F09F00C2880D /* IDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB6F41D17B9F09F00C2880D /* IDViewController.m */; };
+		CEE3F84D17BB3CCF0074CD5B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F84C17BB3CCF0074CD5B /* CFNetwork.framework */; };
+		CEE3F84F17BB3CD50074CD5B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F84E17BB3CD50074CD5B /* CoreLocation.framework */; };
+		CEE3F85117BB3CDB0074CD5B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F85017BB3CDB0074CD5B /* CoreBluetooth.framework */; };
+		CEE3F85317BB3CE50074CD5B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F85217BB3CE50074CD5B /* SystemConfiguration.framework */; };
+		CEE3F85517BB3CF40074CD5B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F85417BB3CF40074CD5B /* libc++.dylib */; };
+		CEE3F85717BB3D010074CD5B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F85617BB3D010074CD5B /* libsqlite3.0.dylib */; };
+		CEE3F85917BB3D350074CD5B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F85817BB3D350074CD5B /* QuartzCore.framework */; };
+		CEE3F85D17BB3E790074CD5B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE3F85C17BB3E790074CD5B /* libz.dylib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B4CB94901A66983D004CB377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB948B1A66983D004CB377 /* IndoorsSurface.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEC5A16D17A0D83900E5AE13;
+			remoteInfo = IndoorsSurface;
+		};
+		B4CB94991A66984D004CB377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB94921A66984D004CB377 /* Indoors.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 44EDEB7D166B77CB00241DF1;
+			remoteInfo = Indoors;
+		};
+		B4CB949B1A66984D004CB377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB94921A66984D004CB377 /* Indoors.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 44EDEB8E166B77CB00241DF1;
+			remoteInfo = IndoorsTests;
+		};
+		B4CB949D1A66985A004CB377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB94921A66984D004CB377 /* Indoors.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 44EDEB7C166B77CB00241DF1;
+			remoteInfo = Indoors;
+		};
+		B4CB949F1A66985A004CB377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4CB948B1A66983D004CB377 /* IndoorsSurface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CEC5A16C17A0D83900E5AE13;
+			remoteInfo = IndoorsSurface;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		245ED00E8B05C7E474F88047 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		70F24DA2BE1C9371353F2FD2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		98EC9928615D07A2B3DCA81D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40E2EE41A70FF6800A9474C /* IDLocationListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDLocationListener.h; sourceTree = "<group>"; };
+		B40E2EE51A70FF6800A9474C /* IDLocationListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDLocationListener.m; sourceTree = "<group>"; };
 		B41095171A1366FC002D7F6B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		B41297511883F3BD00C8C00D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B43CB43C1A6E8153004AB368 /* IDSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSecondViewController.h; sourceTree = "<group>"; };
+		B43CB43D1A6E8153004AB368 /* IDSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSecondViewController.m; sourceTree = "<group>"; };
+		B4CB948B1A66983D004CB377 /* IndoorsSurface.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IndoorsSurface.xcodeproj; path = ../IndoorsSurfaceIOS/IndoorsSurface.xcodeproj; sourceTree = "<group>"; };
+		B4CB94921A66984D004CB377 /* Indoors.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Indoors.xcodeproj; path = ../IndoorsLibraryIOS/Indoors.xcodeproj; sourceTree = "<group>"; };
+		B4CB94A31A669882004CB377 /* libLocator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLocator.a; path = "../IndoorsLocator-IOS/Debug-iphoneos/libLocator.a"; sourceTree = "<group>"; };
 		CEB6F40117B9F09F00C2880D /* MyFirstIndoorsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstIndoorsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB6F40417B9F09F00C2880D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CEB6F40617B9F09F00C2880D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CEB6F40817B9F09F00C2880D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CEB6F40C17B9F09F00C2880D /* MyFirstIndoorsApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyFirstIndoorsApp-Info.plist"; sourceTree = "<group>"; };
 		CEB6F40E17B9F09F00C2880D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CEB6F41017B9F09F00C2880D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEB6F41217B9F09F00C2880D /* MyFirstIndoorsApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFirstIndoorsApp-Prefix.pch"; sourceTree = "<group>"; };
 		CEB6F41317B9F09F00C2880D /* IDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDAppDelegate.h; sourceTree = "<group>"; };
 		CEB6F41417B9F09F00C2880D /* IDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDAppDelegate.m; sourceTree = "<group>"; };
+		CEB6F41617B9F09F00C2880D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CEB6F41817B9F09F00C2880D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CEB6F41A17B9F09F00C2880D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CEB6F41C17B9F09F00C2880D /* IDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDViewController.h; sourceTree = "<group>"; };
 		CEB6F41D17B9F09F00C2880D /* IDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDViewController.m; sourceTree = "<group>"; };
+		CEE3F84C17BB3CCF0074CD5B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CEE3F84E17BB3CD50074CD5B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CEE3F85017BB3CDB0074CD5B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CEE3F85217BB3CE50074CD5B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CEE3F85417BB3CF40074CD5B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		CEE3F85617BB3D010074CD5B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		CEE3F85817BB3D350074CD5B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CEE3F85A17BB3D3C0074CD5B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		CEE3F85C17BB3E790074CD5B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,20 +113,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86DA536DC7496AE93A732A2A /* libPods.a in Frameworks */,
+				B4CB94A41A669882004CB377 /* libLocator.a in Frameworks */,
+				B4CB94A11A669882004CB377 /* libIndoors.a in Frameworks */,
+				B4CB94A21A669882004CB377 /* libIndoorsSurface.a in Frameworks */,
+				B41297521883F3BD00C8C00D /* CoreMotion.framework in Frameworks */,
+				CEE3F85D17BB3E790074CD5B /* libz.dylib in Frameworks */,
+				CEE3F85917BB3D350074CD5B /* QuartzCore.framework in Frameworks */,
+				CEE3F85717BB3D010074CD5B /* libsqlite3.0.dylib in Frameworks */,
+				CEE3F85517BB3CF40074CD5B /* libc++.dylib in Frameworks */,
+				CEE3F85317BB3CE50074CD5B /* SystemConfiguration.framework in Frameworks */,
+				CEE3F85117BB3CDB0074CD5B /* CoreBluetooth.framework in Frameworks */,
+				CEE3F84F17BB3CD50074CD5B /* CoreLocation.framework in Frameworks */,
+				CEE3F84D17BB3CCF0074CD5B /* CFNetwork.framework in Frameworks */,
+				CEB6F40517B9F09F00C2880D /* UIKit.framework in Frameworks */,
+				CEB6F40717B9F09F00C2880D /* Foundation.framework in Frameworks */,
+				CEB6F40917B9F09F00C2880D /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		58CCF99B59A48CE8959A36BA /* Pods */ = {
+		B4CB948C1A66983D004CB377 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				245ED00E8B05C7E474F88047 /* Pods.debug.xcconfig */,
-				70F24DA2BE1C9371353F2FD2 /* Pods.release.xcconfig */,
+				B4CB94911A66983D004CB377 /* libIndoorsSurface.a */,
 			);
-			name = Pods;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4CB94931A66984D004CB377 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4CB949A1A66984D004CB377 /* libIndoors.a */,
+				B4CB949C1A66984D004CB377 /* IndoorsTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CEB6F3F817B9F09F00C2880D = {
@@ -58,7 +157,6 @@
 				CEB6F40A17B9F09F00C2880D /* MyFirstIndoorsApp */,
 				CEB6F40317B9F09F00C2880D /* Frameworks */,
 				CEB6F40217B9F09F00C2880D /* Products */,
-				58CCF99B59A48CE8959A36BA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,7 +171,22 @@
 		CEB6F40317B9F09F00C2880D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98EC9928615D07A2B3DCA81D /* libPods.a */,
+				B4CB94A31A669882004CB377 /* libLocator.a */,
+				B4CB94921A66984D004CB377 /* Indoors.xcodeproj */,
+				B4CB948B1A66983D004CB377 /* IndoorsSurface.xcodeproj */,
+				B41297511883F3BD00C8C00D /* CoreMotion.framework */,
+				CEE3F85C17BB3E790074CD5B /* libz.dylib */,
+				CEE3F85A17BB3D3C0074CD5B /* CoreFoundation.framework */,
+				CEE3F85817BB3D350074CD5B /* QuartzCore.framework */,
+				CEE3F85617BB3D010074CD5B /* libsqlite3.0.dylib */,
+				CEE3F85417BB3CF40074CD5B /* libc++.dylib */,
+				CEE3F85217BB3CE50074CD5B /* SystemConfiguration.framework */,
+				CEE3F85017BB3CDB0074CD5B /* CoreBluetooth.framework */,
+				CEE3F84E17BB3CD50074CD5B /* CoreLocation.framework */,
+				CEE3F84C17BB3CCF0074CD5B /* CFNetwork.framework */,
+				CEB6F40417B9F09F00C2880D /* UIKit.framework */,
+				CEB6F40617B9F09F00C2880D /* Foundation.framework */,
+				CEB6F40817B9F09F00C2880D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,6 +200,10 @@
 				CEB6F41D17B9F09F00C2880D /* IDViewController.m */,
 				CEB6F40B17B9F09F00C2880D /* Supporting Files */,
 				B41095171A1366FC002D7F6B /* Launch Screen.xib */,
+				B43CB43C1A6E8153004AB368 /* IDSecondViewController.h */,
+				B43CB43D1A6E8153004AB368 /* IDSecondViewController.m */,
+				B40E2EE41A70FF6800A9474C /* IDLocationListener.h */,
+				B40E2EE51A70FF6800A9474C /* IDLocationListener.m */,
 			);
 			path = MyFirstIndoorsApp;
 			sourceTree = "<group>";
@@ -98,6 +215,9 @@
 				CEB6F40D17B9F09F00C2880D /* InfoPlist.strings */,
 				CEB6F41017B9F09F00C2880D /* main.m */,
 				CEB6F41217B9F09F00C2880D /* MyFirstIndoorsApp-Prefix.pch */,
+				CEB6F41617B9F09F00C2880D /* Default.png */,
+				CEB6F41817B9F09F00C2880D /* Default@2x.png */,
+				CEB6F41A17B9F09F00C2880D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -109,15 +229,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEB6F42717B9F09F00C2880D /* Build configuration list for PBXNativeTarget "MyFirstIndoorsApp" */;
 			buildPhases = (
-				500A7111CBE8CAD93E9E86A6 /* Check Pods Manifest.lock */,
 				CEB6F3FD17B9F09F00C2880D /* Sources */,
 				CEB6F3FE17B9F09F00C2880D /* Frameworks */,
 				CEB6F3FF17B9F09F00C2880D /* Resources */,
-				AD379E65B4D806CBF0DAE692 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B4CB949E1A66985A004CB377 /* PBXTargetDependency */,
+				B4CB94A01A66985A004CB377 /* PBXTargetDependency */,
 			);
 			name = MyFirstIndoorsApp;
 			productName = MyFirstIndoorsApp;
@@ -144,6 +264,16 @@
 			mainGroup = CEB6F3F817B9F09F00C2880D;
 			productRefGroup = CEB6F40217B9F09F00C2880D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B4CB94931A66984D004CB377 /* Products */;
+					ProjectRef = B4CB94921A66984D004CB377 /* Indoors.xcodeproj */;
+				},
+				{
+					ProductGroup = B4CB948C1A66983D004CB377 /* Products */;
+					ProjectRef = B4CB948B1A66983D004CB377 /* IndoorsSurface.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CEB6F40017B9F09F00C2880D /* MyFirstIndoorsApp */,
@@ -151,50 +281,44 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B4CB94911A66983D004CB377 /* libIndoorsSurface.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libIndoorsSurface.a;
+			remoteRef = B4CB94901A66983D004CB377 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4CB949A1A66984D004CB377 /* libIndoors.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libIndoors.a;
+			remoteRef = B4CB94991A66984D004CB377 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4CB949C1A66984D004CB377 /* IndoorsTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IndoorsTests.octest;
+			remoteRef = B4CB949B1A66984D004CB377 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		CEB6F3FF17B9F09F00C2880D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CEB6F40F17B9F09F00C2880D /* InfoPlist.strings in Resources */,
+				CEB6F41717B9F09F00C2880D /* Default.png in Resources */,
+				CEB6F41917B9F09F00C2880D /* Default@2x.png in Resources */,
+				CEB6F41B17B9F09F00C2880D /* Default-568h@2x.png in Resources */,
 				B41095181A1366FC002D7F6B /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		500A7111CBE8CAD93E9E86A6 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AD379E65B4D806CBF0DAE692 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEB6F3FD17B9F09F00C2880D /* Sources */ = {
@@ -204,10 +328,25 @@
 				CEB6F41117B9F09F00C2880D /* main.m in Sources */,
 				CEB6F41517B9F09F00C2880D /* IDAppDelegate.m in Sources */,
 				CEB6F41E17B9F09F00C2880D /* IDViewController.m in Sources */,
+				B40E2EE61A70FF6800A9474C /* IDLocationListener.m in Sources */,
+				B43CB43E1A6E8153004AB368 /* IDSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4CB949E1A66985A004CB377 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Indoors;
+			targetProxy = B4CB949D1A66985A004CB377 /* PBXContainerItemProxy */;
+		};
+		B4CB94A01A66985A004CB377 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IndoorsSurface;
+			targetProxy = B4CB949F1A66985A004CB377 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CEB6F40D17B9F09F00C2880D /* InfoPlist.strings */ = {
@@ -281,13 +420,18 @@
 		};
 		CEB6F42817B9F09F00C2880D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245ED00E8B05C7E474F88047 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/Indoors",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyFirstIndoorsApp/MyFirstIndoorsApp-Prefix.pch";
 				INFOPLIST_FILE = "MyFirstIndoorsApp/MyFirstIndoorsApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "/Users/dominik/Documents/xcode/IndoorsLocator-IOS/Debug-iphoneos";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -295,13 +439,18 @@
 		};
 		CEB6F42917B9F09F00C2880D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70F24DA2BE1C9371353F2FD2 /* Pods.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/Indoors",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyFirstIndoorsApp/MyFirstIndoorsApp-Prefix.pch";
 				INFOPLIST_FILE = "MyFirstIndoorsApp/MyFirstIndoorsApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "/Users/dominik/Documents/xcode/IndoorsLocator-IOS/Debug-iphoneos";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
