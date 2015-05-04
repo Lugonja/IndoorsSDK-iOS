@@ -6,161 +6,76 @@
 //  Copyright (c) 2012 Indoors. All rights reserved.
 //
 
-/**
- #! Will be seperated later into single protocol files.
- */
-
 #import <Foundation/Foundation.h>
 
 @class IDSBuilding;
 @class IndoorsError;
 
 /**
- * Delegates for asynchronous communication with the service.
- *
- * All calls are made from the applications ui(main) thread so feel free to
- * update your userinterface.
- *
- * @author customLBS | Philipp Koenig
- *
- */
-@protocol IndoorsRequestDelegate <NSObject>
-
-
-@end
-
-/**
- * Delegate to retrieve buildings imported by the client.
- *
- * @see Indoors#getImportedBuildings(ImportedBuildingDelegate)
- *
- * @author customLBS | Philipp Koenig
- *
- */
-@protocol ImportedBuildingDelegate <NSObject>
-
-/**
- * List of available buildings imported with
- * {@link Indoors#addMapDirectory(java.io.File, boolean)}.
- *
- * Does not contain {@link Floor} or {@link Tiles} members.
- *
- * Use {@link Indoors#getBuilding(Building, LoadingBuildingDelegate)} to
- * get {@link Floor} and {@link Tiles} objects.
- *
- * @see Indoors#getBuilding(Building, LoadingBuildingDelegate)
- *
- * @param buildings
- */
-- (void)setImportedBuildings:(NSArray*) buildings;
-
-@end
-
-/**
- * Delegate to retrieve buildings available from indoo.rs server.
- *
- * @see Indoors#getOnlineBuildings(OnlineBuildingDelegate)
- *
- * @author customLBS | Philipp Koenig
- *
+ Delegate to retrieve buildings available from indoo.rs server.
  */
 @protocol OnlineBuildingDelegate <NSObject>
 
 /**
- * List of buildings available from indoo.rs server.
- *
- * Does not contain {@link Floor} or {@link Tiles}.
- *
- * Use {@link Indoors#getBuilding(Building, LoadingBuildingDelegate)} to
- * get {@link Floor} and {@link Tiles} objects.
- *
- * @see Indoors#getBuilding(Building, LoadingBuildingDelegate)
- *
- * @param buildings
+ @brief List of buildings available from indoo.rs server.
+ 
+ @param buildings Array of IDSBuilding objects. The objects do not contain floors and tiles.
  */
-- (void)setOnlineBuildings:(NSArray*)buildings;
+- (void)setOnlineBuildings:(NSArray *)buildings;
 
-- (void)getOnlineBuildingsFailWithError:(NSError*)error;
+- (void)getOnlineBuildingsFailWithError:(NSError *)error;
 
 @end
     
 /**
- * Delegate to retrieve calculated route.
- *
- * @see Indoors#getRouteAToB(Coordinate, Coordinate, RoutingDelegate)
- *
- * @author customLBS | Philipp Koenig
- *
+ @brief Delegate to retrieve calculated route.
  */
 @protocol RoutingDelegate <NSObject>
 
 /**
- * Path coordinates from the given route. Z coordinate may change if
- * routing through different floors.
- *
- * @param path NSArray with Coordinates.
+ @brief Called when requested route has been calculated.
+ 
+ @param path Contains IDSCoordinate objects representing the path.
  */
-- (void)setRoute:(NSArray*) path;
+- (void)setRoute:(NSArray *)path;
 
 @end
 
 /**
- * Delegate for progress of loading a building.
- *
- * @see Indoors#getBuilding(Building, LoadingBuildingDelegate)
- * @see IndoorsLocationListener
- * @see IndoorsLocationAdapter
- *
- * @author customLBS | Philipp Koenig
- *
+ @brief Delegate for progress of loading a building.
  */
-
 @protocol LoadingBuildingDelegate <NSObject>
+
 /**
- * Consequent calls are made until the building is loaded. Then the
- * building will be set with {@link #buildingLoaded(Building)}.
- *
- * @param progress
- *            (0 - 100)
+ @brief Consequent calls are made until the building is loaded.
+ 
+ @param progress Progress measured in percent.
  */
-- (void)loadingBuilding:(NSNumber*)progress;
+- (void)loadingBuilding:(NSNumber *)progress;
         
 /**
- * Service finished processing building. Building object has
- * {@link Floor} and {@link Tiles} set.
- *
- * @see TileRequester
- *
- * @param building
+ @brief Service finished processing building.
+ 
+ @param building The loaded building.
  */
-- (void)buildingLoaded:(IDSBuilding*)building;
+- (void)buildingLoaded:(IDSBuilding *)building;
 
 /**
- * Callback when loading building failed
- *
+ @brief Callback when loading building failed
  */
 - (void)loadingBuildingFailed;
 
 @end
 
-/**
- * Consequent calls are made until the building is loaded. Then the
- * building will be set with {@link #buildingLoaded(Building)}.
- *
- * @param progress
- *            (0 - 100)
- */
 @protocol ZoneDelegate <NSObject>
-- (void)setZones:(NSArray*)zones;
+
+- (void)setZones:(NSArray *)zones;
+
 @end
 
 /**
- * Retrieve information about the authentication status.
- *
- * @author customLBS | Philipp Koenig
- *
+ @brief Retrieve information about the authentication status.
  */
-//#! errorprot
 @protocol IndoorsServiceDelegate <NSObject>
 
 typedef NS_ENUM(NSUInteger, IDSBluetoothState) {
@@ -174,31 +89,18 @@ typedef NS_ENUM(NSUInteger, IDSLocationAuthorizationStatus) {
 };
 
 /**
- * Client successful registered to the indoors service and is free to
- * register {@link IndoorsLocationListener}s or make any calls to
- * {@link Indoors}.
+ @brief Client successfully registered to the indoors service.
  */
 - (void)connected;
 
 /**
- * Exceptions from this method will always have an error code set (
- * {@link IndoorsException#getErrorCode()}).
- *
- * <ul>
- * <li>{@link ErrorCode#AUTH_LICENSE_EXCEEDED} The API key is expired.</li>
- * <li>{@link ErrorCode#AUTH_LICENSE_NOTEXISTING} The API key does not
- * exist.</li>
- * <li>{@link ErrorCode#AUTH_OBLIGATORY_IO_REQUEST} The API key must be
- * checked with the indoors server, so a connection to the server is
- * required. This is only required if the license was never checked.</li>
- * </ul>
- *
- * @param indoorsException
+ @brief Exceptions from this method will always have an error code set. See IndoorsErrorCode.h for details.
  */
 - (void)onError:(IndoorsError *)indoorsError;
 
 - (void)bluetoothStateDidChange:(IDSBluetoothState)bluetoothState;
 
 - (void)locationAuthorizationStatusDidChange:(IDSLocationAuthorizationStatus)status;
+
 @end
 

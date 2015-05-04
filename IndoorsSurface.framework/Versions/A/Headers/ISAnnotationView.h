@@ -11,9 +11,9 @@ typedef enum {
 
 @interface ISAnnotationView : UIView
 @property (nonatomic) IDSCoordinate *coordinate;
+@property (nonatomic) CGSize size;
 @property (nonatomic, readonly) CGFloat widthRatio;
 @property (nonatomic, readonly) CGFloat heightRatio;
-@property (nonatomic, readonly) CGSize size;
 @property (nonatomic, readonly) CGFloat zoomScale;
 @property (nonatomic, readonly) ISAnnotationViewPosition position;
 

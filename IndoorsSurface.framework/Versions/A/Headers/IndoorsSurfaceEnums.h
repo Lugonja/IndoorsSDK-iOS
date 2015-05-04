@@ -2,10 +2,10 @@
 #define IndoorsSurface_IndoorsSurfaceEnums_h
 
 typedef enum {
-    IndoorsSurfaceZoneDisplayModeUserCurrentLocation,
-    IndoorsSurfaceZoneDisplayModeAllAvailable ,
-    IndoorsSurfaceZoneDisplayModeNone
-}IndoorsSurfaceZoneDisplayModes;
+    IndoorsSurfaceZoneDisplayModeUserCurrentLocation, // Only display user's current zone.
+    IndoorsSurfaceZoneDisplayModeAllAvailable, // Display all zones.
+    IndoorsSurfaceZoneDisplayModeNone // Not display any zone.
+} IndoorsSurfaceZoneDisplayModes;
 
 typedef enum {
     IndoorsSurfaceUserPositionDisplayModeDefault,

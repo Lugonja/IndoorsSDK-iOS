@@ -18,6 +18,7 @@
 #import "IDSServiceAuthentication.h"
 #import "IndoorsParameters.h"
 #import "IndoorsLocationListener.h"
+#import "IDSLogLevels.h"
 
 @class IDSCoordinate;
 
@@ -37,14 +38,14 @@
  OnSuccess call delegate IndoorsServiceDelegate(connected)
  OnFail call delegate IndoorsServiceDelegate(onError:)
  
- @param licenseKey 
- Your indoo.rs API key
- @param serviceDelegate 
- Service delegate to be called on success or failure
+ @param licenseKey Your indoo.rs API key
+ @param serviceDelegate Service delegate to be called on success or failure
  
  @result indoo.rs instance - You should not use it to call any API, instead use the shared instance
  */
 - (Indoors *)initWithLicenseKey:(NSString *)licenseKey andServiceDelegate:(id<IndoorsServiceDelegate>)serviceDelegate;
+
+- (void)setLogLevel:(IDSLogLevel)level;
 
 /*!
  validates licenseKey passed to initWithLicenseKey:andServiceDelegate
@@ -89,11 +90,6 @@
 - (IDSCoordinate *)snapPosition:(IDSCoordinate *)position toRoute:(NSArray *)path;
 
 - (void)enableEvaluationMode:(BOOL)isEvaluationModeEnabled;
-
-- (void)positionUpdated:(IDSCoordinate *)newPosition;
-- (void)contextUpdated:(IDSContext *)newContext;
-- (void)zonesUpdated:(NSArray *)zoneIds;
-- (void)orientationUpdated:(float)orientation;
 
 - (void)passLocationToLocator:(IDSCoordinate *)location;
 

@@ -11,49 +11,30 @@
 
 @interface IndoorsBuilder : NSObject
 
-/*!
- @method setApiKey:
- @discussion
- Set your indoo.rs License API key to be able to access any indoo.rs service.
- Use given API key to authenticate to indoo.rs service.
- 
- @param apiKey
- indoo.rs License API key
+@property (nonatomic, readonly) BOOL built;
+
+@property (nonatomic, weak) id<LoadingBuildingDelegate> loadingBuildingServiceCallBack;
+@property (nonatomic, weak) id<IndoorsServiceDelegate> authenticationServiceCallBack;
+
+/**
+ @brief Your indoo.rs API key used to access any indoo.rs service.
  */
-- (void)setApiKey:(NSString*)apiKey;
+@property (nonatomic, copy) NSString *apiKey;
 
-/*!
- @method setBuildingId:
- @discussion
- Set the building ID, that the builder will load once connected successfully to the indoo.rs service.
- 
- @param buildingId
- indoo.rs building ID to be loaded.
+/**
+  @brief The id of the building to be loaded.
  */
-- (void)setBuildingId:(NSInteger)buildingId;
+@property (nonatomic) NSInteger buildingId;
 
-/*!
- @method getBuildingId
- @discussion
- Get current building ID to be loaded
- 
- @return building ID that will be used to load.
+/**
+ @brief If the builder should enable evaluation mode in the indoo.rs service.
  */
-- (NSInteger)getBuildingId;
-
-- (void)enableEvaluationMode:(BOOL)isEvaluationModeEnabled;
-
-- (BOOL)isEvaluationModeEnabled;
+@property (nonatomic, setter=enableEvaluationMode:, getter=isEvaluationModeEnabled) BOOL enableEvaluationMode;
 
 /*!
- @discussion 
- Build IndoorsBuilder, this method is starting the Authentication and then loading the building.
+ @brief Build IndoorsBuilder, this method starts the indoo.rs service and then loads the building.
  You can't change any property or update any values after calling this method.
- If you try to change anything after calling this method the application will throw an error.
  */
 - (void)build;
 
-
-@property (nonatomic, strong) id<LoadingBuildingDelegate> loadingBuildingServiceCallBack;
-@property (nonatomic, strong) id<IndoorsServiceDelegate> authenticationServiceCallBack;
 @end

@@ -5,44 +5,30 @@
 #import "ISIndoorsSurface.h"
 
 @interface IndoorsSurfaceBuilder : NSObject
+
 @property (nonatomic, readonly) ISIndoorsSurface *indoorsSurface;
-/*!
- @method initWithIndoorsBuilder:inView:
- @discussion 
- Initialize IndoorsSurfaceBuilder, surface used to present an indoo.rs map.
- 
- @param indoorsBuilder
- An instance of IndoorsBuilder, you should intialize the instance with a valid API key and building ID before passing it to surface.
- @param view
- View that planned to add the surface to it, suface will take full width and height of given view
- 
- @result Insance of IndoorsSurfaceBuilder
- */
+@property (nonatomic) IndoorsSurfaceZoneDisplayModes zoneDisplayMode;
 
-- (id)initWithIndoorsBuilder:(IndoorsBuilder*)indoorsBuilder inView:(UIView*)view;
-
-/*!
- @method setZoneDisplayMode
- @discussion 
- Set DisplayMode of available zones in the map.
- Surface will highlight the zones with the given display mode.
- 
- @param zoneDisplayMode
- Default value: IndoorsSurfaceZoneDisplayModeNone
- 
- IndoorsSurfaceZoneDisplayModeUserCurrentLocation: Only display user's current zone
- IndoorsSurfaceZoneDisplayModeAllAvailable: Display all zones
- IndoorsSurfaceZoneDisplayModeNone: Will not display any zone
+/**
+ @brief Set display mode of the available zones in the map. The indoo.rs surface will highlight the zones with the given display mode.
  */
-- (void)setZoneDisplayMode:(IndoorsSurfaceZoneDisplayModes)zoneDisplayMode;
-- (void)setUserPositionDisplayMode:(IndoorsSurfaceUserPositionDisplayModes)userPositionMode;
-- (void)setUserPositionIcon:(UIImage*)userPositionIcon;
+@property (nonatomic) IndoorsSurfaceUserPositionDisplayModes userPositionDisplayMode;
+@property (nonatomic) UIImage *userPositionIcon;
+
+/**
+ @brief Initialize IndoorsSurfaceBuilder. Used to present an indoo.rs map.
+ 
+ @param indoorsBuilder An instance of IndoorsBuilder, you should intialize the instance with a valid API key and building ID.
+ @param view The view the surface view will be added to as a subview. It will take full width and height of given view.
+ */
+- (instancetype)initWithIndoorsBuilder:(IndoorsBuilder*)indoorsBuilder inView:(UIView *)view;
+
 - (void)registerForSurfaceLocationUpdates:(id<IndoorsSurfaceLocationDelegate>)locationDelegate;
 - (void)registerForSurfaceServiceUpdates:(id<IndoorsSurfaceServiceDelegate>)surfaceServiceDelegate;
-- (void)showPathWithPoints:(NSArray*)points;
-- (void)hideAccuracyView:(BOOL)shouldHideAccuracy;
-- (void)build;
 
-@property (nonatomic, strong) id<LoadingBuildingDelegate> loadingBuildingCallBack;
+- (void)showPathWithPoints:(NSArray *)points;
+- (void)hideAccuracyView:(BOOL)shouldHideAccuracy;
+
+- (void)build;
 
 @end

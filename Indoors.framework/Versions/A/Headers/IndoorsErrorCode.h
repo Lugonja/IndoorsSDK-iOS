@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- */
 typedef enum
 {
     INDOORS_ERROR_GENERAL_BUILDING_NOT_FOUND = 1001240,
