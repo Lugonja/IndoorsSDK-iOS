@@ -8,35 +8,36 @@
 #import "IDViewController.h"
 #import <Indoors/IndoorsBuilder.h>
 #import <IndoorsSurface/IndoorsSurfaceBuilder.h>
-#import <IndoorsSurface/IndoorsSurfaceDelegates.h>
 
-@interface IDViewController () <IndoorsSurfaceLocationDelegate, IndoorsSurfaceServiceDelegate>
-@property (nonatomic, strong) IndoorsSurfaceBuilder *surfaceBuilder;
+@interface IDViewController () <IndoorsLocationListener, IndoorsServiceDelegate, LoadingBuildingDelegate>
+
 @end
 
-@implementation IDViewController
-@synthesize surfaceBuilder;
+@implementation IDViewController {
+    IndoorsSurfaceBuilder *_surfaceBuilder;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     IndoorsBuilder *builder = [[IndoorsBuilder alloc] init];
-
+    
     // TODO: replace with your API-key
     [builder setApiKey:@"YOUR-API-KEY"];
     // TODO: replace with your building ID
     [builder setBuildingId:123456789];
     [builder enableEvaluationMode:NO];
-
-    surfaceBuilder = [[IndoorsSurfaceBuilder alloc] initWithIndoorsBuilder:builder inView:self.view];
-
-    [surfaceBuilder registerForSurfaceServiceUpdates:self];
-
-    [surfaceBuilder setZoneDisplayMode:IndoorsSurfaceZoneDisplayModeUserCurrentLocation];
-    [surfaceBuilder setUserPositionDisplayMode:IndoorsSurfaceUserPositionDisplayModeDefault];
-
-    [surfaceBuilder build];
+    
+    _surfaceBuilder = [[IndoorsSurfaceBuilder alloc] initWithIndoorsBuilder:builder inView:self.view];
+    
+    [_surfaceBuilder registerForSurfaceServiceUpdates:self];
+    [_surfaceBuilder registerForSurfaceLocationUpdates:self];
+    
+    [_surfaceBuilder setZoneDisplayMode:IndoorsSurfaceZoneDisplayModeUserCurrentLocation];
+    [_surfaceBuilder setUserPositionDisplayMode:IndoorsSurfaceUserPositionDisplayModeDefault];
+    
+    [_surfaceBuilder build];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,25 +45,34 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Service Delegate
+#pragma mark - IndoorsLocationListener, IndoorsServiceDelegate, LoadingBuildingDelegate
 
 - (void)connected
 {
-    [surfaceBuilder registerForSurfaceLocationUpdates:self];
+}
+
+- (void)locationAuthorizationStatusDidChange:(IDSLocationAuthorizationStatus)status
+{
+    NSLog(@"locationAuthorizationStatusDidChange");
+}
+
+- (void)bluetoothStateDidChange:(IDSBluetoothState)bluetoothState
+{
+    NSLog(@"bluetoothStateDidChange");
 }
 
 - (void)onError:(IndoorsError *)indoorsError
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to authenticate with your API key" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
 }
 
 - (void)loadingBuilding:(NSNumber *)progress
 {
+    NSLog(@"loading building progress: %d", [progress intValue]);
 }
 
 - (void)buildingLoaded:(IDSBuilding *)building
 {
+    NSLog(@"building loaded");
 }
 
 - (void)loadingBuildingFailed
@@ -71,22 +81,34 @@
     [alert show];
 }
 
-#pragma mark - IndoorsSurfaceLocationManagerDelegate
-
-- (void)updateFloorLevel:(int)floorLevel name:(NSString *)name
+- (void)changedFloor:(int)floorLevel withName:(NSString *)name
 {
+    NSLog(@"changed floor: %d", floorLevel);
 }
 
-- (void)updateUserPosition:(IDSCoordinate *)userPosition
+- (void)positionUpdated:(IDSCoordinate *)userPosition
 {
+    NSLog(@"userPosition: x=%ld, y = %ld, z = %ld", (long)userPosition.x, (long)userPosition.y, (long)userPosition.z);
 }
 
-- (void)updateUserOrientation:(float)orientation
+- (void)orientationUpdated:(float)orientation
 {
+    NSLog(@"orientation: %f", orientation);
+}
+
+- (void)zonesEntered:(NSArray *)zones
+{
+    NSLog(@"zones entered: %@", zones);
 }
 
 - (void)weakSignal
 {
+    NSLog(@"weak signal");
+}
+
+- (void)contextUpdated:(IDSContext *)context
+{
+    NSLog(@"contextUpdated");
 }
 
 @end
