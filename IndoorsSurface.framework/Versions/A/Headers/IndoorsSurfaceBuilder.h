@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <Indoors/Indoors.h>
 #import "IndoorsSurfaceEnums.h"
-#import "IndoorsSurfaceDelegates.h"
 #import "ISIndoorsSurface.h"
 
 @interface IndoorsSurfaceBuilder : NSObject
@@ -23,8 +22,8 @@
  */
 - (instancetype)initWithIndoorsBuilder:(IndoorsBuilder*)indoorsBuilder inView:(UIView *)view;
 
-- (void)registerForSurfaceLocationUpdates:(id<IndoorsSurfaceLocationDelegate>)locationDelegate;
-- (void)registerForSurfaceServiceUpdates:(id<IndoorsSurfaceServiceDelegate>)surfaceServiceDelegate;
+- (void)registerForSurfaceLocationUpdates:(id<IndoorsLocationListener>)locationDelegate;
+- (void)registerForSurfaceServiceUpdates:(id<IndoorsServiceDelegate, LoadingBuildingDelegate>)surfaceServiceDelegate;
 
 - (void)showPathWithPoints:(NSArray *)points;
 - (void)hideAccuracyView:(BOOL)shouldHideAccuracy;
