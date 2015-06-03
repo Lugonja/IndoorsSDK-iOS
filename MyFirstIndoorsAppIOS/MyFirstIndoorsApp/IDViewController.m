@@ -2,113 +2,82 @@
 //  IDViewController.m
 //  MyFirstIndoorsApp
 //
-//  Copyright (c) 2013 indoo.rs GmbH. All rights reserved.
+//  Copyright (c) 2015 indoo.rs GmbH. All rights reserved.
 //
 
 #import "IDViewController.h"
-#import <Indoors/IndoorsBuilder.h>
-#import <IndoorsSurface/IndoorsSurfaceBuilder.h>
+#import <Indoors/Indoors.h>
+#import <IndoorsSurface/ISIndoorsSurfaceViewController.h>
 
-@interface IDViewController () <IndoorsLocationListener, IndoorsServiceDelegate, LoadingBuildingDelegate>
+@interface IDViewController () <IndoorsServiceDelegate, ISIndoorsSurfaceViewControllerDelegate>
 
 @end
 
 @implementation IDViewController {
-    IndoorsSurfaceBuilder *_surfaceBuilder;
+    ISIndoorsSurfaceViewController *_indoorsSurfaceViewController;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    IndoorsBuilder *builder = [[IndoorsBuilder alloc] init];
+    __unused Indoors *indoors = [[Indoors alloc] initWithLicenseKey:@"YOUR-API-KEY" andServiceDelegate:self]; // REPLACE WITH YOUR API KEY
     
-    // TODO: replace with your API-key
-    [builder setApiKey:@"YOUR-API-KEY"];
-    // TODO: replace with your building ID
-    [builder setBuildingId:123456789];
-    [builder enableEvaluationMode:NO];
+    _indoorsSurfaceViewController = [[ISIndoorsSurfaceViewController alloc] init];
+    _indoorsSurfaceViewController.delegate = self;
     
-    _surfaceBuilder = [[IndoorsSurfaceBuilder alloc] initWithIndoorsBuilder:builder inView:self.view];
+    [self addSurfaceAsChildViewController];
     
-    [_surfaceBuilder registerForSurfaceServiceUpdates:self];
-    [_surfaceBuilder registerForSurfaceLocationUpdates:self];
-    
-    [_surfaceBuilder setZoneDisplayMode:IndoorsSurfaceZoneDisplayModeUserCurrentLocation];
-    [_surfaceBuilder setUserPositionDisplayMode:IndoorsSurfaceUserPositionDisplayModeDefault];
-    
-    [_surfaceBuilder build];
+    [_indoorsSurfaceViewController loadBuildingWithBuildingId:12345678]; // REPLACE WITH YOUR BUILDING ID
 }
 
-- (void)didReceiveMemoryWarning
+- (void)addSurfaceAsChildViewController
 {
-    [super didReceiveMemoryWarning];
+    [self addChildViewController:_indoorsSurfaceViewController];
+    _indoorsSurfaceViewController.view.frame = self.view.frame;
+    [self.view addSubview:_indoorsSurfaceViewController.view];
+    [_indoorsSurfaceViewController didMoveToParentViewController:self];
 }
 
-#pragma mark - IndoorsLocationListener, IndoorsServiceDelegate, LoadingBuildingDelegate
+#pragma mark - ISIndoorsSurfaceViewControllerDelegate
+
+- (void)indoorsSurfaceViewController:(ISIndoorsSurfaceViewController *)indoorsSurfaceViewController isLoadingBuildingWithBuildingId:(NSUInteger)buildingId progress:(NSUInteger)progress
+{
+    NSLog(@"Building loading progress: %lu", (unsigned long)progress);
+}
+
+- (void)indoorsSurfaceViewController:(ISIndoorsSurfaceViewController *)indoorsSurfaceViewController didFinishLoadingBuilding:(IDSBuilding *)building
+{
+    NSLog(@"Building loaded successfully!");
+}
+
+- (void)indoorsSurfaceViewController:(ISIndoorsSurfaceViewController *)indoorsSurfaceViewController didFailLoadingBuildingWithBuildingId:(NSUInteger)buildingId error:(NSError *)error
+{
+    NSLog(@"Loading building failed with error: %@", error);
+    
+    [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:error.localizedFailureReason delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil] show];
+}
+
+#pragma mark - IndoorsServiceDelegate
 
 - (void)connected
 {
-}
-
-- (void)locationAuthorizationStatusDidChange:(IDSLocationAuthorizationStatus)status
-{
-    NSLog(@"locationAuthorizationStatusDidChange");
-}
-
-- (void)bluetoothStateDidChange:(IDSBluetoothState)bluetoothState
-{
-    NSLog(@"bluetoothStateDidChange");
+    
 }
 
 - (void)onError:(IndoorsError *)indoorsError
 {
+    
 }
 
-- (void)loadingBuilding:(NSNumber *)progress
+- (void)locationAuthorizationStatusDidChange:(IDSLocationAuthorizationStatus)status
 {
-    NSLog(@"loading building progress: %d", [progress intValue]);
+    
 }
 
-- (void)buildingLoaded:(IDSBuilding *)building
+- (void)bluetoothStateDidChange:(IDSBluetoothState)bluetoothState
 {
-    NSLog(@"building loaded");
-}
-
-- (void)loadingBuildingFailed
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to load building" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
-}
-
-- (void)changedFloor:(int)floorLevel withName:(NSString *)name
-{
-    NSLog(@"changed floor: %d", floorLevel);
-}
-
-- (void)positionUpdated:(IDSCoordinate *)userPosition
-{
-    NSLog(@"userPosition: x=%ld, y = %ld, z = %ld", (long)userPosition.x, (long)userPosition.y, (long)userPosition.z);
-}
-
-- (void)orientationUpdated:(float)orientation
-{
-    NSLog(@"orientation: %f", orientation);
-}
-
-- (void)zonesEntered:(NSArray *)zones
-{
-    NSLog(@"zones entered: %@", zones);
-}
-
-- (void)weakSignal
-{
-    NSLog(@"weak signal");
-}
-
-- (void)contextUpdated:(IDSContext *)context
-{
-    NSLog(@"contextUpdated");
+    
 }
 
 @end

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "IndoorsDelegate.h"
 
+DEPRECATED_MSG_ATTRIBUTE("Please use [[Indoors alloc] initWithLicenseKey:andServiceDelegate:] instead to init the indoo.rs SDK.")
+/**
+ @deprecated Deprecated in version 3.3.0
+ */
 @interface IndoorsBuilder : NSObject
 
 @property (nonatomic, readonly) BOOL built;
