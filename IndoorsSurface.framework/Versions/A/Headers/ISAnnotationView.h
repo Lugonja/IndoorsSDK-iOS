@@ -10,6 +10,7 @@ typedef enum {
 } ISAnnotationViewPosition;
 
 @interface ISAnnotationView : UIView
+
 @property (nonatomic) IDSCoordinate *coordinate;
 @property (nonatomic) CGSize size;
 @property (nonatomic, readonly) CGFloat widthRatio;
@@ -20,4 +21,5 @@ typedef enum {
 - (instancetype)initWithCoordinate:(IDSCoordinate *)coordinate position:(ISAnnotationViewPosition)position size:(CGSize)size NS_DESIGNATED_INITIALIZER;
 - (void)setCoordinate:(IDSCoordinate *)coordinate;
 - (void)setCoordinate:(IDSCoordinate *)coordinate animated:(BOOL)animated;
+
 @end

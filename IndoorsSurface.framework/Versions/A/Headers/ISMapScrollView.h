@@ -21,6 +21,13 @@
 @property (nonatomic) IDSCoordinate *userCurrentLocation;
 @property (nonatomic) NSInteger userCurrentFloorLevel;
 
+@property (nonatomic) BOOL userPositionIconIndicatesUserOrientation;
+@property (nonatomic) UIImage *userPositionIcon;
+@property (nonatomic) UIColor *defaultUserPositionIconColor;
+@property (nonatomic) UIImage *noOrientationUserPositionIcon;
+@property (nonatomic) UIColor *defaultNoOrientationUserPositionIconColor;
+@property (nonatomic) UIColor *userPositionAccuracyCircleColor;
+
 - (void)letUserSelectLocationWithCalloutTitle:(NSString *)title;
 - (void)requireUserToSelectLocationWithCalloutTitle:(NSString *)title;
 - (void)cancelSelectLocation;
@@ -40,10 +47,9 @@
 - (void)addAnnotation:(ISAnnotationView *)annotationView;
 - (void)removeAnnotation:(ISAnnotationView *)annotationView;
 - (void)setZoneDisplayMode:(IndoorsSurfaceZoneDisplayModes)zoneDisplayMode;
+
 - (void)setUserPositionDisplayMode:(IndoorsSurfaceUserPositionDisplayModes)userPositionDisplayMode;
-- (void)setUserPositionIcon:(UIImage *)userPositionIcon;
-- (void)setUserPositionDefaultIconColor:(UIColor *)color;
-- (void)setUserPositionAccuracyCircleColor:(UIColor *)color;
+
 - (void)didReceiveWeakSignal;
 
 - (IDSCoordinate *)coordinateForPoint:(CGPoint)point;

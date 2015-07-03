@@ -67,12 +67,6 @@
 
 @end
 
-@protocol ZoneDelegate <NSObject>
-
-- (void)setZones:(NSArray *)zones;
-
-@end
-
 /**
  @brief Retrieve information about the authentication status.
  */

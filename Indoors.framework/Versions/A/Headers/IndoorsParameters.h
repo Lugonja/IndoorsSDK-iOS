@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, IndoorsParameterKey) {
-    IndoorsParameterKeyForceMapLocationMode = 0
+    IndoorsParameterKeyForceMapLocationMode = 0,
+    IndoorsParameterKeyPositionUpdateInterval = 5,
 };
 
 typedef NS_ENUM(NSInteger, IndoorsParameterValue) {

@@ -29,9 +29,8 @@
 
 + (Indoors *)instance;
 
-/*!
- @method initWithLicenseKey:andServiceDelegate:
- @abstract Initialize indoo.rs API to be able to call any method, automatically authenticate indoo.rs service.
+/**
+ @brief Initializes indoo.rs-SDK
  @discussion
  Initialize indoo.rs instance.
  Use given licenseKey to authenticate to indoo.rs service.
