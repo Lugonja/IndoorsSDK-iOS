@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class IDSFloor;
+@class IDSBuilding;
+
 @interface IDSDefaultMap : NSObject
+
+@property (nonatomic, weak) IDSBuilding *building;
+
 @property (nonatomic) long defaultMapID;
 @property (nonatomic) double mmPerPixelBase;
 @property (nonatomic) NSInteger maxTileSize;
@@ -53,19 +58,11 @@
  */
 
 @property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, copy, readonly) NSString *tilesPath;
 @property (nonatomic, assign, readonly) CGSize mapSize;
 @property (nonatomic, assign, readonly) NSUInteger levelsOfDetail;
 
-- (id)initWithName:(NSString *)name
-         tilesPath:(NSString *)tilesPath
-    mmPerPixelBase:(float)mmPerPixelBase
-           mapSize:(CGSize)mapSize
-    levelsOfDetail:(NSUInteger)levelsOfDetail;
 - (UIImage *)tileForScale:(CGFloat)scale row:(int)row col:(int)col;
 
-
-
-- (void) calculateValues;
+- (void)calculateValues;
 
 @end

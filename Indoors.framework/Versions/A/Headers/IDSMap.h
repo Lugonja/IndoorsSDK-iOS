@@ -54,6 +54,7 @@
     mmPerPixelBase:(float)mmPerPixelBase
            mapSize:(CGSize)mapSize
     levelsOfDetail:(NSUInteger)levelsOfDetail;
+
 - (UIImage *)tileForScale:(CGFloat)scale row:(int)row col:(int)col;
 
 @end

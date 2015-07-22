@@ -19,13 +19,11 @@
 #import "IndoorsParameters.h"
 #import "IndoorsLocationListener.h"
 #import "IDSLogLevels.h"
+#import "IDSBuildingManager.h"
 
 @class IDSCoordinate;
 
 @interface Indoors : NSObject
-
-@property (nonatomic, strong) NSString *tilesPath;
-@property (nonatomic) NSSet *iBeaconUUIDsForRadioProvider;
 
 + (Indoors *)instance;
 
@@ -50,8 +48,6 @@
  validates licenseKey passed to initWithLicenseKey:andServiceDelegate
  */
 - (void)validateLicenseKeyWithDelegate:(id<IDSServiceAuthenticationDelegate>)delegate;
-
-- (void)setCredentialsWithPassword:(NSString *)password andEmail:(NSString *)email;
 
 /*!
  @discussion
@@ -82,8 +78,6 @@
 
 - (void)getOnlineBuildings:(id<OnlineBuildingDelegate>)onlineBuildingDelegate;
 
-- (NSString *)getCurrentDatabasePath;
-
 - (void)routeFromLocation:(IDSCoordinate *)from toLocation:(IDSCoordinate *)to delegate:(id<RoutingDelegate>)routingDelegate;
 
 - (IDSCoordinate *)snapPosition:(IDSCoordinate *)position toRoute:(NSArray *)path;
@@ -91,14 +85,5 @@
 - (void)enableEvaluationMode:(BOOL)isEvaluationModeEnabled;
 
 - (void)passLocationToLocator:(IDSCoordinate *)location;
-
-/*!
- EXPERIMENTAL - method is subject to change
- 
- call this only after a building has been selected
- 
- returns array of IDSNetwork or nil
- */
-- (NSArray *)getNetworks;
 
 @end

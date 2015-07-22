@@ -18,26 +18,14 @@ typedef NS_OPTIONS(NSUInteger, IDSBuildingSource) {
 };
 
 /**
- * <p>
- * Model class representing a building.
- * </p>
- *
- * <p>
- * Note: Buildings retrieved with
- * {@link Indoors#getImportedBuildings(ImportedBuildingCallback)} or
- * {@link Indoors#getOnlineBuildings(OnlineBuildingCallback)} will not be fully
- * initialized with all their members. Floor or tile members will not be set as
- * they are intended to show all available buildings.
- * </p>
- *
- * <p>
- * Buildings retrieved from {@link IndoorsLocationListener} or via
- * {@link Indoors#getBuilding(Building, LoadingBuildingCallback)} will have all
- * their members set.
- * </p>
- *
- * @author customLBS | Philipp Koenig
- *
+ Model class representing a building.
+ 
+ Note: Buildings retrieved with getOnlineBuildings will not be fully
+ initialized with all their properties. Floor or tile properties will not be set as
+ they are intended to show all available buildings.
+
+ Buildings retrieved from getBuilding will have all
+ their members set.
  */
 @interface IDSBuilding : NSObject
 
@@ -55,6 +43,4 @@ typedef NS_OPTIONS(NSUInteger, IDSBuildingSource) {
 - (IDSFloor *)getFloorById:(long)floorId;
 - (IDSZone *)getZoneById:(long)zoneId;
 
-//#! Added for prototype
-@property (nonatomic,strong) IDSMap *map;
 @end
