@@ -78,6 +78,7 @@
 
 - (void)getOnlineBuildings:(id<OnlineBuildingDelegate>)onlineBuildingDelegate;
 
+- (void)routeFromLocation:(IDSCoordinate *) from toLocation:(IDSCoordinate *)to inBuilding:(IDSBuilding *)building delegate:(id<RoutingDelegate>)routingDelegate;
 - (void)routeFromLocation:(IDSCoordinate *)from toLocation:(IDSCoordinate *)to delegate:(id<RoutingDelegate>)routingDelegate;
 
 - (IDSCoordinate *)snapPosition:(IDSCoordinate *)position toRoute:(NSArray *)path;
