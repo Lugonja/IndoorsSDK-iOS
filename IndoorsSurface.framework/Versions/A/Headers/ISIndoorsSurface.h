@@ -20,8 +20,15 @@
 
 @property (nonatomic) id<IndoorsSurfaceViewDelegate> delegate;
 @property (nonatomic, readonly) ISMapScrollView *mapScrollView;
+@property (nonatomic) CGRect visibleMapRect;
 @property (nonatomic) BOOL enableAutomaticFloorSelection;
 @property (nonatomic) BOOL routeSnappingEnabled;
+
+/**
+ @brief A Boolean value indicating whether the map should try to display the user’s location.
+ @discussion This property does not indicate whether the user’s position is actually visible on the map, only whether the map view should try to display it.
+ */
+@property (nonatomic) BOOL showsUserPosition;
 
 /**
  @brief Defines whether the user position icon should indicate the user's orientation.
@@ -69,6 +76,11 @@
 - (void)setSize:(CGRect)newFrame;
 - (void)setMapCenterWithCoordinate:(IDSCoordinate *)coordinate;
 
+/**
+ @brief Changes the currently visible portion of the map and optionally animates the change.
+ */
+- (void)setVisibleMapRect:(CGRect)mapRect animated:(BOOL)animated;
+
 - (void)letUserSelectLocationWithCalloutTitle:(NSString *)calloutTitle;
 - (void)requireUserToSelectLocationWithCalloutTitle:(NSString *)calloutTitle;
 - (void)cancelSelectLocation;
@@ -80,7 +92,10 @@
 
 - (void)setZoneDisplayMode:(IndoorsSurfaceZoneDisplayModes)zoneDisplayMode;
 
-- (void)setUserPositionDisplayMode:(IndoorsSurfaceUserPositionDisplayModes)userPositionDisplayMode;
+/**
+ @deprecated Deprecated in version 3.7.0
+ */
+- (void)setUserPositionDisplayMode:(IndoorsSurfaceUserPositionDisplayModes)userPositionDisplayMode DEPRECATED_MSG_ATTRIBUTE("Please use the showsUserPosition property instead.");
 
 - (void)hideAccuracy:(BOOL)shouldHideAccuracy;
 

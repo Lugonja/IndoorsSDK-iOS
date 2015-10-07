@@ -25,45 +25,37 @@
 
 @interface Indoors : NSObject
 
+/**
+ @brief Returns the indoo.rs SDK version as a string.
+ */
++ (NSString *)versionInfo;
+
 + (Indoors *)instance;
 
 /**
- @brief Initializes indoo.rs-SDK
- @discussion
- Initialize indoo.rs instance.
- Use given licenseKey to authenticate to indoo.rs service.
- OnSuccess call delegate IndoorsServiceDelegate(connected)
- OnFail call delegate IndoorsServiceDelegate(onError:)
+ @brief Initializes indoo.rs-SDK.
  
- @param licenseKey Your indoo.rs API key
- @param serviceDelegate Service delegate to be called on success or failure
+ @param licenseKey Your indoo.rs API key.
+ @param serviceDelegate Service delegate to be called on success or failure.
  
- @result indoo.rs instance - You should not use it to call any API, instead use the shared instance
+ @result indoo.rs instance - You should not use it to call any API, instead use the shared instance.
  */
 - (Indoors *)initWithLicenseKey:(NSString *)licenseKey andServiceDelegate:(id<IndoorsServiceDelegate>)serviceDelegate;
 
 - (void)setLogLevel:(IDSLogLevel)level;
 
-/*!
- validates licenseKey passed to initWithLicenseKey:andServiceDelegate
+/**
+ @brief Validates licenseKey passed to initWithLicenseKey:andServiceDelegate.
  */
 - (void)validateLicenseKeyWithDelegate:(id<IDSServiceAuthenticationDelegate>)delegate;
 
-/*!
- @discussion
- Register location listener to recieve any location updates.
- 
- @param listner 
- IndoorsLocationAdapter instance to be added as listener
+/**
+ @brief Register location listener to recieve location updates.
  */
 - (void)registerLocationListener:(id<IndoorsLocationListener>)listener;
 
-/*!
- @discussion
- Remove location listener, you should remove your listener before releasing it.
- 
- @param listner 
- IndoorsLocationAdapter instance to be removed from list of existing listeners if exists.
+/**
+ @brief Remove location listener.
  */
 - (void)removeLocationListener:(id<IndoorsLocationListener>)listener;
 
@@ -78,7 +70,7 @@
 
 - (void)getOnlineBuildings:(id<OnlineBuildingDelegate>)onlineBuildingDelegate;
 
-- (void)routeFromLocation:(IDSCoordinate *) from toLocation:(IDSCoordinate *)to inBuilding:(IDSBuilding *)building delegate:(id<RoutingDelegate>)routingDelegate;
+- (void)routeFromLocation:(IDSCoordinate *)from toLocation:(IDSCoordinate *)to inBuilding:(IDSBuilding *)building delegate:(id<RoutingDelegate>)routingDelegate;
 - (void)routeFromLocation:(IDSCoordinate *)from toLocation:(IDSCoordinate *)to delegate:(id<RoutingDelegate>)routingDelegate;
 
 - (IDSCoordinate *)snapPosition:(IDSCoordinate *)position toRoute:(NSArray *)path;

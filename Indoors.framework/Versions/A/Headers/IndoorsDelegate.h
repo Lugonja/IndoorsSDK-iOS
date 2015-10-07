@@ -83,9 +83,11 @@ typedef NS_ENUM(NSUInteger, IDSLocationAuthorizationStatus) {
 };
 
 /**
- @brief Client successfully registered to the indoors service.
+ @deprecated Deprecated in version 3.7.0. Please put the code from this method right after the initWithLicenseKey:andServiceDelegate: statement.
+ @method connected
+ @abstract Client successfully registered to the indoors service.
  */
-- (void)connected;
+- (void)connected DEPRECATED_MSG_ATTRIBUTE("This method should not be used anymore.");
 
 /**
  @brief Exceptions from this method will always have an error code set. See IndoorsErrorCode.h for details.
