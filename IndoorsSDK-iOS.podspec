@@ -8,14 +8,14 @@ Pod::Spec.new do |s|
    s.license                 = { :type => "Copyright",
                                  :text => "Copyright 2015 indoo.rs GmbH. All rights reserved." }
    s.source                  = { :git => "https://github.com/customlbs/IndoorsSDK-iOS.git", 
-   								 :tag => "3.8.0" }
+   								      :tag => "3.8.0" }
 
 								
    s.ios.vendored_frameworks = "IndoorsSDK.framework"
    
-   s.ios.frameworks          = "QuartzCore", "SystemConfiguration", "CoreMotion", "CFNetwork", "UIKit", 							   "Foundation", "CoreBluetooth", "CoreGraphics", "CoreLocation"
+   s.ios.frameworks          = "QuartzCore", "SystemConfiguration", "CoreMotion", "CFNetwork", "UIKit", "Foundation", "CoreBluetooth", "CoreGraphics", "CoreLocation"
    
-   s.libraries 				 = "z", "sqlite3.0", "c++"
+   s.libraries               = "z", "sqlite3.0", "c++"
    
    s.requires_arc            = true
 
