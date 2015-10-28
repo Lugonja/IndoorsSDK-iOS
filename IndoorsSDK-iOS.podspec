@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name                    = "IndoorsSDK-iOS"
-   s.version                 = "3.7.0"
+   s.version                 = "3.8.0"
    s.platform                = :ios, "7.1"
    s.summary                 = "iOS SDK for performing indoors mapping and localisation provided by indoo.rs"
    s.authors                 = { "indoo.rs"  => "office@indoo.rs" }
@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
    s.license                 = { :type => "Copyright",
                                  :text => "Copyright 2015 indoo.rs GmbH. All rights reserved." }
    s.source                  = { :git => "https://github.com/customlbs/IndoorsSDK-iOS.git", 
-   								 :tag => "3.7.0" }
+   								 :tag => "3.8.0" }
 
 								
-   s.ios.vendored_frameworks = "Indoors.framework", "IndoorsSurface.framework"
+   s.ios.vendored_frameworks = "IndoorsSDK.framework"
    
    s.ios.frameworks          = "QuartzCore", "SystemConfiguration", "CoreMotion", "CFNetwork", "UIKit", 							   "Foundation", "CoreBluetooth", "CoreGraphics", "CoreLocation"
    

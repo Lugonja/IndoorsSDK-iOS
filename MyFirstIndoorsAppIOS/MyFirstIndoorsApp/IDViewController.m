@@ -6,8 +6,7 @@
 //
 
 #import "IDViewController.h"
-#import <Indoors/Indoors.h>
-#import <IndoorsSurface/ISIndoorsSurfaceViewController.h>
+#import <IndoorsSDK/IndoorsSDK.h>
 
 @interface IDViewController () <IndoorsServiceDelegate, ISIndoorsSurfaceViewControllerDelegate>
 
