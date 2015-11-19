@@ -29,7 +29,7 @@
  *
  * @param mmPerPixel milimeter per pixel as int.
  */
-@property (nonatomic) NSUInteger mmPerPixel;
+@property (nonatomic) CGFloat mmPerPixel;
 
 /**
  * The tile size (a power of 2). 1 is the most detailed tile size.
