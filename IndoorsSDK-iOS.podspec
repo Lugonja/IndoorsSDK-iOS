@@ -4,7 +4,8 @@ Pod::Spec.new do |s|
    s.platform                = :ios, "7.1"
    s.summary                 = "iOS SDK for performing indoors mapping and localisation provided by indoo.rs"
    s.authors                 = { "indoo.rs"  => "office@indoo.rs" }
-   s.homepage                = "https://github.com/customlbs/IndoorsSDK-iOS"
+   s.homepage                = "http://www.indoo.rs"
+   s.documentation_url       = "http://indoors.readme.io/docs/getting-started-with-indoors-ios-sdk"
    s.license                 = { :type => "Copyright",
                                  :text => "Copyright 2015 indoo.rs GmbH. All rights reserved." }
    s.source                  = { :git => "https://github.com/customlbs/IndoorsSDK-iOS.git", 
