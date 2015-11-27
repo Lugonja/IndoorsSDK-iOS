@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
    s.documentation_url       = "http://indoors.readme.io/docs/getting-started-with-indoors-ios-sdk"
    s.license                 = { :type => "Copyright",
                                  :text => "Copyright 2015 indoo.rs GmbH. All rights reserved." }
-   s.source                  = { :git => "https://bitbucket.org:indoors/indoorssdk-ios.git", 
+   s.source                  = { :git => "https://bitbucket.org/indoors/indoorssdk-ios.git", 
    								      :tag => "3.9.0" }
 
 								
