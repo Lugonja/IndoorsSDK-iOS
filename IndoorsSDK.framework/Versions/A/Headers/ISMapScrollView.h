@@ -4,6 +4,7 @@
 #import "ISAnnotationView.h"
 #import "IndoorsSurfaceEnums.h"
 #import "ISMapOverlay.h"
+#import "ISRouteMapOverlay.h"
 
 @class ISMapScrollView;
 
@@ -36,6 +37,7 @@
 
 - (void)setRoutingPath:(NSArray *)path;
 - (void)setRoutingPath:(NSArray *)path withColor:(UIColor *)color lineWidth:(CGFloat)lineWidth;
+- (void)setRoutingPath:(NSArray *)path withColor:(UIColor *)color lineWidth:(CGFloat)lineWidth lineCap:(ISRouteMapOverlayLineCap)lineCap;
 - (void)clearRouting;
 
 - (void)setUserPosition:(IDSCoordinate *)coordinate;

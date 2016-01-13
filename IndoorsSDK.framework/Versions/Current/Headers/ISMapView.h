@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Indoors.h"
 #import "ISMapOverlay.h"
+#import "ISRouteMapOverlay.h"
 
 @class ISAnnotationView;
 
@@ -23,6 +24,7 @@
 - (void)removeTopAnnotation:(ISAnnotationView *)annotation;
 
 - (void)setRoutingPath:(NSArray *)path withColor:(UIColor *)color lineWidth:(CGFloat)lineWidth;
+- (void)setRoutingPath:(NSArray *)path withColor:(UIColor *)color lineWidth:(CGFloat)lineWidth lineCap:(ISRouteMapOverlayLineCap)lineCap;
 - (void)showZones:(NSArray *)zones;
 - (void)hideAllZones;
 

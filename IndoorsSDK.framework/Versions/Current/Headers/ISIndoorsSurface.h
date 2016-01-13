@@ -3,6 +3,7 @@
 #import "ISMapScrollView.h"
 #import "ISMapOverlay.h"
 #import "ISImageMapOverlay.h"
+#import "ISRouteMapOverlay.h"
 
 @class ISIndoorsSurface;
 
@@ -27,6 +28,17 @@
  @discussion This property does not indicate whether the user’s position is actually visible on the map, only whether the map view should try to display it.
  */
 @property (nonatomic) BOOL showsUserPosition;
+
+/**
+ @brief A boolean value indicating whether Dot on Rails mode is on or off.
+ @discussion If this property is set to YES, and Snapping to predefined routes is off, this will enable predefined route snapping. If this property is set to NO, predefined route snapping will not be affected.
+ */
+@property (nonatomic) BOOL enableDotOnRails;
+
+/**
+ @brief This property sets a maximum jumping distance for Dot on Rails. Value is in millimeters. Recommended values are 1.000-30.000 mm.
+ */
+@property (nonatomic) double dotOnRailsJumpingDistance;
 
 /**
  @brief Defines whether the user position icon should indicate the user's orientation.
@@ -83,6 +95,7 @@
 - (void)requireUserToSelectLocationWithCalloutTitle:(NSString *)calloutTitle;
 - (void)cancelSelectLocation;
 
+- (void)showPathWithPoints:(NSArray *)points color:(UIColor *)color lineWidth:(CGFloat)lineWidth lineCap:(ISRouteMapOverlayLineCap)lineCap;
 - (void)showPathWithPoints:(NSArray *)points color:(UIColor *)color lineWidth:(CGFloat)lineWidth;
 - (void)showPathWithPoints:(NSArray *)points;
 

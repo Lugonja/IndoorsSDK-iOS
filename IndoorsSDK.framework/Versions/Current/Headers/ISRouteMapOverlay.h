@@ -10,7 +10,14 @@
 
 #import "ISMapOverlay.h"
 
+typedef enum : NSUInteger {
+    ISRouteMapOverlayLineCapButt,
+    ISRouteMapOverlayLineCapRound
+} ISRouteMapOverlayLineCap;
+
 @interface ISRouteMapOverlay : ISMapOverlay
+
+@property (nonatomic) ISRouteMapOverlayLineCap lineCap;
 
 - (instancetype)initWithPath:(NSArray *)path color:(UIColor *)color lineWidth:(CGFloat)lineWidth floorLevel:(NSInteger)floorLevel;
 

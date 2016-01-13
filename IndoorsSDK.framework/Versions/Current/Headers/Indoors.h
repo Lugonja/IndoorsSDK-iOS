@@ -26,6 +26,11 @@
 @interface Indoors : NSObject
 
 /**
+ @brief When set to NO, SDK will use cached building instead of trying to downloading newer version from the server. Default value is YES;
+ */
+@property (nonatomic) BOOL alwaysDownloadNewBuildingVersion;
+
+/**
  @brief Returns the indoo.rs SDK version as a string.
  */
 + (NSString *)versionInfo;

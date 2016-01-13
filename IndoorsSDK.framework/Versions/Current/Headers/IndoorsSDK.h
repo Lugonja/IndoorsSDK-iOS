@@ -12,7 +12,6 @@
 #import <IndoorsSDK/Indoors.h>
 
 #import <IndoorsSDK/IndoorsLocationListener.h>
-#import <IndoorsSDK/ISPointAnnotationView.h>
 #import <IndoorsSDK/IDSCoordinate.h>
 #import <IndoorsSDK/IndoorsDelegate.h>
 #import <IndoorsSDK/IDSServiceAuthentication.h>
@@ -22,6 +21,13 @@
 #import <IndoorsSDK/IDSZonePoint.h>
 #import <IndoorsSDK/IDSFloor.h>
 #import <IndoorsSDK/IDSDebugStream.h>
+
+//Surface headers
+#import <IndoorsSDK/IndoorsSurfaceBuilder.h>
 #import <IndoorsSDK/ISIndoorsSurfaceViewController.h>
+#import <IndoorsSDK/ISPointAnnotationView.h>
+#import <IndoorsSDK/ISZoneMapOverlay.h>
+#import <IndoorsSDK/ISCalloutAnnotationView.h>
+#import <IndoorsSDK/ISImageAnnotationView.h>
 
 #endif /* IndoorsSDK_h */
