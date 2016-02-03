@@ -1,4 +1,6 @@
-This repository contains all information related to the IndoorsSDK CocoaPods.
+This repository contains CocoaPods for IndoorsSDK library.
+
+
 
 
 Information about getting started with our SDK can be found here:
