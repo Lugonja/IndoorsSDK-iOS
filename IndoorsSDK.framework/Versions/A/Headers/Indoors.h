@@ -26,9 +26,28 @@
 @interface Indoors : NSObject
 
 /**
- @brief When set to NO, SDK will use cached building instead of trying to downloading newer version from the server. Default value is YES;
+ @brief When set to NO, SDK will use cached building instead of trying to downloading newer version from the server.
+ @default YES
  */
 @property (nonatomic) BOOL alwaysDownloadNewBuildingVersion;
+
+/**
+ @brief Kalman filter is used to improve localisation accuracy for certain setups. Contact support@indoo.rs to get more information about your venue.
+ @default YES
+ */
+@property (nonatomic, getter = isKalmanFilterEnabled) BOOL enableKalmanFilter;
+
+/**
+ @brief Stabilisation filter is used to reduce user location jumps when you are not walking.
+ @default YES
+ */
+@property (nonatomic, getter = isStabilisationFilterEnabled) BOOL enableStabilisationFilter;
+
+/**
+ @brief The number of miliseconds it takes for the stabilisation filter to kick in. Time range is 4000-20000 [ms]
+ @default 4000 [ms]
+ */
+@property (nonatomic) NSInteger stabilisationFilterTime;
 
 /**
  @brief Returns the indoo.rs SDK version as a string.
